@@ -1,11 +1,15 @@
 while true do
     -- Define function to perform actions after breaking obsidian
     local function handleObsidian()
+        turtle.select(2)  -- Select the slot with redstone
+        turtle.drop(1)    -- Drop only 1 redstone dust
+        
+        turtle.forward()
+        turtle.select(3)  -- Select the slot with the obsidian
+        turtle.placeUp()  -- Place the block
+        turtle.back()     -- Move back to the original position
+        turtle.attack()   -- Simulate a left-click on the placed block
         turtle.select(1)  -- Select the slot with redstone
-        turtle.drop()     -- Drop the redstone
-        turtle.select(2)  -- Select the slot with obsidian
-        turtle.placeUp()  -- Place the obsidian block above
-        turtle.attackUp() -- Left-click on the obsidian block above
     end
 
     -- Check and dig in front
